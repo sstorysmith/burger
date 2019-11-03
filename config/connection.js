@@ -1,7 +1,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // This connects Node to MySQL.
 // the connection is exported for use with other modules
-
+console.log("inside connection.js");
  
 
 var mysql = require("mysql");
@@ -15,6 +15,6 @@ connection.connect(function(err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return; }  
-console.log("connected as id " + connection.threadId);
+console.log("inside connection   mysql connected as id " + connection.threadId);
 });
 module.exports = connection;

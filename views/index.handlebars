@@ -1,4 +1,4 @@
-<h1>Eat da Burger App</h1>
+<h1>Eat the Burger App</h1>
 <p>Track burger orders with this app.</p>
 
 <!-- Pass in data from server.js -->
@@ -7,7 +7,7 @@
   	<li>
   	  <p><span class="label">ID:</span> {{this.id}}</p>
       <p><span class="label">Burger Name:</span> {{this.burgerName}}</p>
-      <p><span class="label">Devoured:</span> {{this.devloured}}</p>
+      <p><span class="label">Devoured:</span> {{this.devoured}}</p>
       <button data-id="{{this.id}}" class="devourburger">Devoured</button> 
       <a href="/{{this.id}}">Update this burger</a>
   	</li>
@@ -18,12 +18,13 @@
 <h2>Add a Burger</h2>
 <form class="create-form">
   <div class="form-group">
-    <label for="burgerName"></label>
-    <input type="text" id="id" name="id">
+    <label for="burgerName">Burger Name:</label>
+    <textarea id="burger" name="burger" rows="8" cols="10"></textarea>
+    <input type="text" burgerName="burgerName" >
   </div>
   <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <textarea id="burger" name="burger" rows="8" cols="10"></textarea>
+    <label for="devoured">Devoured:</label>
+    <textarea id="devoured" name="devoured" rows="8" cols="10"></textarea>
   </div>
 
   <button type="submit">Order Burger</button>

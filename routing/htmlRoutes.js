@@ -6,7 +6,6 @@
 var path = require("path")
 // var express = require("express");
 // var app = express();
-
 module.exports = function(app) {
 
 // Routes
@@ -17,7 +16,7 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/home.html"));
 });
 
-// Route sends the survey to the user.
+// Route sends the display of ordered burgers, entry form, and devoured burgers to the user.
 app.get("/burgers", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/burgerStatus.html"));
 });

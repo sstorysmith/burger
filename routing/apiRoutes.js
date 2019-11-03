@@ -3,7 +3,7 @@
 // We are linking our routes to our data source. 
 // This data source holds array of information on each survey participant.
 // ===============================================================================
- const burgersData = require("../data/friendsData.js");
+ var burgersData = require("..db/data/burgersData.js");
  const determineCompatibles = require("../../determineCompatibles");
 
 // ===============================================================================
@@ -20,7 +20,7 @@
 // ---------------------------------------------------------------------------
   app.get("/api/burger", function(req, res) {
     console.log('inside api Routes app.post   burgers');
- const friendsData = require(burgersData);
+//  var burgersData = require(burgersData);
     res.json(burgersData);  
                                              });      
                                                
@@ -32,7 +32,7 @@
       app.post("/api/devour", function(req, res) {
     console.log('inside api Routes app.post  devour');   
     // store user and survey results to the datafile 
-    burgers.devour = true;                                     
+    burgers.devour = "true";                                     
           
       // display
         res.json(burger);         
@@ -43,8 +43,8 @@
       app.post("/api/addBurger", function(req, res) {
     console.log('inside api Routes app.post  addBurger');   
     // use SQL to insert new burger to datafile 
-      addBurgertoDB(userData); 
+      addBurgertoDB(burgersData); 
       // display
-        res.json(burgers);         
+        res.json(burgersData);         
                                                   })
                                                 }
