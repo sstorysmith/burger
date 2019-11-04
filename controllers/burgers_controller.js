@@ -1,4 +1,4 @@
-console.log("inside burgers burgersController.js");
+console.log("inside burgers_Controller.js");
 var express = require("express");
 
 var router = express.Router();
@@ -8,16 +8,18 @@ var burger = require("../models/burgers.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  burger.all(function(data) {
+  burger.select(function(data) {
     var Object = {
     burgersData: data
     };
-    console.log(hbsObject);
+    //console.log(hbsObject);
+    console.log("inside burgers_Controller.js /  hbsObject: " + hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 router.post("/api/burgers", function(req, res) {
+  console.log("inside burgers_Controller.js .post/api/burgers");
   burger.create(["name", "devoured", cb], [req.body.name, req.body.devoured], function(result) {
     // Send back the ID of the new burger order
     res.json({ id: result.insertId });
@@ -27,6 +29,7 @@ router.post("/api/burgers", function(req, res) {
 router.put("/api/burger/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   console.log("devoured", condition);
+  console.log("inside burgers_Controller.js .put /api/burgers/:id");
   burger.update(
     {
       devoured: req.body.condition
