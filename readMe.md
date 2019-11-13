@@ -1,5 +1,13 @@
 # Node Express Handlebars
 
+Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
+
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications. The Express.js framework makes it very easy to develop an application which can be used to handle multiple types of requests like the GET, PUT, and POST and DELETE requests
+
+ With Handlebars, you can separate the generation of HTML from the rest of your JavaScript and write cleaner code. The derived handlebar-javascript expressions then takes one parameter, an object(your data) and it returns a string with the HTML and the object properties with values inserted into the HTML. It's obcious to the ye with it's
+ signature double curly braces.
+
+
 ### Overview
 ### Before You Begin
 

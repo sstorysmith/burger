@@ -1,40 +1,44 @@
+
+alert("inside assets/js/burger.js  ");
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+
 $(function() {
-    $(".change-devoured").on("click", function(event) {
+    $("#devourIt").on("click", function(event) {     
       var id = $(this).data("id");
-      var newDevoured = $(this).data("newDevoured");
-  
+       
       var newDevouredState = {
-        devoured: newDevoured
+        devoured: true
       };
   
-      // Send the PUT request.
-      //? what is api/burgers
-      $.ajax("/api/burgers/" + id, {
-        type: "PUT",
+      // Send the POST request.
+      //C:\utbootcamp\Homework\HW#11burger\burger\controllers\burgers_controller.js is routing
+      $.ajax("/api/burgers/" + id, {  
+          
+        type: "POST",
         data: newDevouredState
-      }).then(
+      }
+      ).then(
         function() {
-          console.log("changed sleep to", newSleep);
+          console.log("changed devoured to", newDevoured);
           // Reload the page to get the updated list
           location.reload();
         }
       );
     });
   
-    $(".create-form").on("submit", function(event) {
+    $("#create").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       var newBurger = {
-        name: $("#ca").val().trim(),
-        // ?name-devoured
-        devoured: $("[name=devoured]:checked").val().trim()
+        burger_name: $("#create").val().trim(),
+      
+        devoured: false
       };
   
-      // Send the POST request.
+      // Send the PUT request.
       $.ajax("/api/burgers", {
-        type: "POST",
+        type: "PUT",
         data: newBurger
       }).then(
         function() {

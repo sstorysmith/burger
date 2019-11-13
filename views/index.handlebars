@@ -1,33 +1,96 @@
+{{!-- ?? can't start mysql
+	?? how is the /post sent
+		lines 29-321 --}}
 
-<h1>Eat the Burger App</h1>
-<p>Track burger orders with this app.</p>
-<!-- Pass in data from server.js -->
-<ul>
-  {{#each burgers}}
-    <li>
-      <p><span class="label">ID:</span> {{id}}</p>
-      <p><span class="label">Burger Name:</span> {{burger_name}}</p>
-      <p><span class="label">Devoured:</span> {{devoured}}</p>
-      <button data-id="{{this.id}}" class="devourburger">Devoured</button> 
-      <a href="/{{this.id}}">Update this burger</a>
-    </li>
-  {{/each}}
-</ul>
-<h2>Add a Burger</h2>
-<form class="create-form">
-  <div class="form-group">
-    <label for="burgerName">Burger Name:</label>
-    <textarea id="burger" name="burger" rows="8" cols="10"></textarea>
-    <input type="text" burgerName="burgerName" >
-  </div>
-  <div class="form-group">
-    <label for="devoured">Devoured:</label>
-    <textarea id="devoured" name="devoured" rows="8" cols="10"></textarea>
-  </div>
-  <button type="submit">Order Burger</button>
-</form>
+<div class="container bg" alt="Responsive image">
+		<div class="jumbotron">
+	
+			<div class="row">
+				<div class="left col-sm-3 rounded float-left" alt="Responsive image" alt="Eat-Da-Burger App">
+					<img src="assets/img/hamburger.png">
+					<p> pngtree.com<p>
+					
+				</div>				
 
+				<div class="center col-sm-6 rounded float-left" alt="Responsive image" alt="Eat-Da-Burger App">
+					<center><h1>Eat-Da-Burger App </h1>					
+				</div>
 
+				<div class="col-sm-3 rounded float-right" alt="Responsive image" alt="Eat-Da-Burger App">
+					<img src="assets/img/fatman.png" class="img-responsive" class="img-circle" alt="Eat-Da-Burger App">
+				
+					 <p> pngtree.com<p>
+				</div>
+			</div>
+		</div>
+		
+	<!-- end .row -->
 
+	<div class="row">
+					
+	    <div class="col-sm-6">
+			<br>
+			<h2>Burgers Available To Eat!</h2>
+			<ul>
+			{{#each burgers}}
+				{{#unless this.devoured}}
+				<li>
+					{{this.id}}
+					{{this.burgerName}}
 
+					<form action="/{{this.id}}?_method=POST" > 
+					<input type="hidden" name="devoured" value="true">
+					<button class="btn-primary" id= "devourIt" >Devour It!</button>
+					 </form> 
+				</li>
+				{{/unless}}
+			{{/each}}
+			</ul>
+	    </div>
 
+	    <div class="right col-sm-6">
+			<br>
+			<h2>Burgers Devoured!</h2>	
+			  <ul>		
+			  {{#each burgers}}
+			    {{#if this.devoured}}
+			      <li>
+			      	{{this.id}}
+			        {{this.burgerName}}
+
+			      </li>
+			    {{/if}}
+			  {{/each}}
+			  </ul>
+			
+	    </div>
+  	</div>
+	  
+	<!-- end .row -->
+
+	<div class="row">
+		
+	    <div class="center col-sm-12">
+
+			<h2>Add A Burger!</h2>
+
+			<form class="create-update-form" action="/" method="POST">
+
+			  <div class="form-group">
+			    <p>Enter burger to order and click the Submit Order button.</p>
+			    <input type="text" id="create" name="burgerName">
+			  </div>
+			  
+			  <button class="btn-primary" type="submit">Submit Order</button>
+			</form>
+
+	    </div>
+	
+  	</div>
+	<!-- end .row -->
+
+</div>
+<!-- Add link to the jQuery Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- link to external javascript -->
+<script src="assets\js\burgers.js"></script>
