@@ -38,8 +38,9 @@
 					{{this.id}}
 					{{this.burgerName}}
 
-					<form action="/{{this.id}}?_method=POST" > 
-					<input type="hidden" name="devoured" value="true">
+					//<form action="/api/burgers {{this.id}}?_method=POST" > 
+					<form action="/api/burgers/ {{this.id}}" method=POST" >
+					<input type="hidden" name="devoured" value="false">
 					<button class="btn-primary" id= "devourIt" >Devour It!</button>
 					 </form> 
 				</li>
@@ -74,7 +75,8 @@
 
 			<h2>Add A Burger!</h2>
 
-			<form class="create-update-form" action="/" method="POST">
+			<form class="create-update-form" action="/api/burgers" method="POST">
+		
 
 			  <div class="form-group">
 			    <p>Enter burger to order and click the Submit Order button.</p>

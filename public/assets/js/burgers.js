@@ -10,11 +10,11 @@ $(function() {
         devoured: true
       };
   
-      // Send the POST request.
+      // Send the PuT request.
       //C:\utbootcamp\Homework\HW#11burger\burger\controllers\burgers_controller.js is routing
-      $.ajax("/api/burgers/" + id, {  
+      $.ajax("/api/burgers" + id, {  
           
-        type: "POST",
+        type: "PUT",
         data: newDevouredState
       }
       ).then(
@@ -31,14 +31,13 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        burger_name: $("#create").val().trim(),
-      
+        burger_name: $("#create").val().trim(),      
         devoured: false
       };
   
-      // Send the PUT request.
+      // Send the Post request.
       $.ajax("/api/burgers", {
-        type: "PUT",
+        type: "POST",
         data: newBurger
       }).then(
         function() {

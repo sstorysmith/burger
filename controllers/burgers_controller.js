@@ -18,7 +18,7 @@ router.get("/", function(req, res) {
   });
 });
 
-router.put("/api/burgers", function(req, res) {
+router.post("/api/burgers", function(req, res) {
   console.log("inside burgers_Controller.js .post/api/burgers");
   burger.create(["burgerName", "devoured", cb], [req.body.burgerName, req.body.devoured], function(result) {
     // Send back the ID of the new burger order
@@ -26,13 +26,13 @@ router.put("/api/burgers", function(req, res) {
   });
 });
 
-router.post("/api/burgers/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   console.log("devoured", condition);
   console.log("inside burgers_Controller.js .put /api/burgers/:id");
   burger.update(
-    {
-      devoured: req.body.condition
+    { id:  req.body.id,
+      devoured: req.body.devoured
     },
     condition,
     function(result) {
