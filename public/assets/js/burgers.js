@@ -3,6 +3,7 @@ alert("inside assets/js/burger.js  ");
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 
 $(function() {
+  // if devourIT is clicked, change set "devoured" to ture and update.
     $("#devourIt").on("click", function(event) {     
       var id = $(this).data("id");
        
@@ -26,6 +27,7 @@ $(function() {
       );
     });
   
+      // if create is clicked, create a new burger.
     $("#create").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
