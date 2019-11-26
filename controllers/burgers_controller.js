@@ -19,12 +19,17 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-  console.log("inside burgers_Controller.js .post/api/burgers");
-  burger.create(["burgerName", "devoured", cb], [req.body.burgerName, req.body.devoured], function(result) {
+  console.log("inside burgers_Controller.js .post/api/burgers")
+  // ERROR: cb not defined
+  // burger.create(["burgerName", "devoured", cb], [req.body.burgerName, req.body.devoured], function(result) {
+  burger.insert(["burgerName", "devoured"], [req.body.burgerName, req.body.devoured], function(result) {
     // Send back the ID of the new burger order
     res.json({ id: result.insertId });
   });
 });
+
+
+
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;

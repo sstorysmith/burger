@@ -56,10 +56,11 @@ var orm = {
   },
   // will insert with data specified
   insert: function(tableInput, rowToInsert, valOfCol) {    
-    var queryString = "INSERT INTO ??  ?? VALUES ??;";   
+    var queryString = "INSERT INTO ??  ??  VALUES ??;";   
     console.log("inside orm insert" + queryString);
     connection.query(queryString, [tableInput, rowToInsert, valOfCol], function(err, result) {
       if (err) {
+        console.log(" ORM insert error ", queryString);
         throw err;      }
       //console.log(result);
       console.log("inside orm insert  result= " + result);
@@ -67,7 +68,7 @@ var orm = {
   },
   
   // will update with data specified
-  delete: function(tableInput, colNames, whichToUpdate) {
+  update: function(tableInput, colNames, whichToUpdate) {
     var queryString = "UPDATE ?? SET ?? WHERE id= ??";    
 
     console.log("inside orm update" + queryString);

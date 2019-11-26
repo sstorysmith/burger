@@ -5,22 +5,21 @@ alert("inside assets/js/burger.js  ");
 $(function() {
   // if devourIT is clicked, change set "devoured" to ture and update.
     $("#devourIt").on("click", function(event) {     
-      var id = $(this).data("id");
-       
-      var newDevouredState = {
-        devoured: true
+      // var id = $(this).data("id");
+      var updateBurger = {
+        id: $(this).data("id"),      
+        devoured: "0"      
       };
   
       // Send the PuT request.
-      //C:\utbootcamp\Homework\HW#11burger\burger\controllers\burgers_controller.js is routing
       $.ajax("/api/burgers" + id, {  
           
         type: "PUT",
-        data: newDevouredState
+        data: updateBurger
       }
       ).then(
         function() {
-          console.log("changed devoured to", newDevoured);
+          console.log("changed devoured to", "0");
           // Reload the page to get the updated list
           location.reload();
         }
