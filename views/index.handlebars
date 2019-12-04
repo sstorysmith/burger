@@ -17,7 +17,7 @@
 				</div>
 
 				<div class="col-sm-3 rounded float-right" alt="Responsive image" alt="Eat-Da-Burger App">
-					<img src="assets/img/fatman.png" class="img-responsive" class="img-circle" alt="Eat-Da-Burger App">
+					<img src="assets/img/fatman.png" id="fatman" class="img-responsive" class="img-circle" alt="Eat-Da-Burger App">
 				
 					 <p> pngtree.com<p>
 				</div>
@@ -36,12 +36,13 @@
 				{{#unless this.devoured}}
 				<li>
 					{{this.id}}
-					{{this.burgerName}}
+					{{this.burger_name}}
 
-					//<form action="/api/burgers {{this.id}}?_method=POST" > 
-					<form action="/api/burgers/ {{this.id}}" method=POST" >
+					{{!-- <form action="/api/burgers{{this.id}}?_method=PUT" >  --}}
+					{{!-- <form action="/api/burgers/{{this.id}}"method=put" > --}}
+					<form>
 					<input type="hidden" name="devoured" value="false">
-					<button class="btn-primary" id= "devourIt" >Devour It!</button>
+					<button class="btn-primary" id= "devourIt" data-id={{this.id}}>Devour It!</button>
 					 </form> 
 				</li>
 				{{/unless}}
@@ -57,7 +58,7 @@
 			    {{#if this.devoured}}
 			      <li>
 			      	{{this.id}}
-			        {{this.burgerName}}
+			        {{this.burger_name}}
 
 			      </li>
 			    {{/if}}
@@ -92,7 +93,7 @@
 	<!-- end .row -->
 
 </div>
- <!----> jQuery is used to "download" the data from the server
+ <!-- jQuery is used to "download" the data from the server -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   

@@ -1,25 +1,28 @@
 
-alert("inside assets/js/burger.js  ");
+//alert("inside assets/js/burger.js  ");
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 
-$(function() {
-  // if devourIT is clicked, change set "devoured" to ture and update.
-    $("#devourIt").on("click", function(event) {     
-      // var id = $(this).data("id");
+
+$(document).ready(function() {
+  // if devourIT is clicked, change set "devoured" to true and update.
+    $("#devourIt").on("click", function() {     
+     //  event.preventDefault();
+      var id = $(this).data("id");
       var updateBurger = {
         id: $(this).data("id"),      
-        devoured: "0"      
+        devoured: true      
       };
   
       // Send the PuT request.
-      $.ajax("/api/burgers" + id, {  
+      console.log("/api/burgers:" + id);
+      $.ajax("/api/burgers/" + id, {  
           
         type: "PUT",
         data: updateBurger
       }
       ).then(
         function() {
-          console.log("changed devoured to", "0");
+          console.log("changed devoured to", updateBurger.devoured);
           // Reload the page to get the updated list
           location.reload();
         }
@@ -27,12 +30,13 @@ $(function() {
     });
   
       // if create is clicked, create a new burger.
-    $("#create").on("submit", function(event) {
+    $("#submitBtn").on("click", function() {
       // Make sure to preventDefault on a submit event.
-      event.preventDefault();
+      //event.preventDefault();
+      name = $("#create").val().trim()
   
       var newBurger = {
-        burger_name: $("#create").val().trim(),      
+        burger_name: name,      
         devoured: false
       };
   

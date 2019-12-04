@@ -6,6 +6,7 @@ var router = express.Router();
 // Import the model (burger.js) to use its database functions.
 var burger = require("../models/burgers.js");
 
+
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   burger.select(function(data) {
@@ -13,28 +14,21 @@ router.get("/", function(req, res) {
     burgers: data
     };
     //console.log(hbsObject);
-    console.log("inside burgers_Controller.js /  hbsObject: ", hbsObject.burgers);
     res.render("index", hbsObject);
   });
 });
 
+// create new row
 router.post("/api/burgers", function(req, res) {
-  console.log("inside burgers_Controller.js .post/api/burgers")
-  // ERROR: cb not defined
-  // burger.create(["burgerName", "devoured", cb], [req.body.burgerName, req.body.devoured], function(result) {
+  req.body.devoured = false;
   burger.insert(["burgerName", "devoured"], [req.body.burgerName, req.body.devoured], function(result) {
     // Send back the ID of the new burger order
     res.json({ id: result.insertId });
   });
 });
 
-
-
-
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-  console.log("devoured", condition);
-  console.log("inside burgers_Controller.js .put /api/burgers/:id");
   burger.update(
     { id:  req.body.id,
       devoured: req.body.devoured

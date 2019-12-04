@@ -6,3 +6,11 @@ button,
    margin: 10px;
  }
 
+ #fatman {
+   width: 2000%;
+   height: 110%;
+ }
+
+ body{
+   background-color: black;
+ }

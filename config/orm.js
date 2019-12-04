@@ -1,5 +1,5 @@
 // Import MySQL connection.
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
@@ -34,7 +34,6 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
-
   // translate array of strings to a single comma-separated string
   return arr.toString();
 }// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -55,28 +54,32 @@ var orm = {
     });
   },
   // will insert with data specified
-  insert: function(tableInput, rowToInsert, valOfCol) {    
-    var queryString = "INSERT INTO ??  ??  VALUES ??;";   
-    console.log("inside orm insert" + queryString);
-    connection.query(queryString, [tableInput, rowToInsert, valOfCol], function(err, result) {
-      if (err) {
-        console.log(" ORM insert error ", queryString);
+  insert: function(tableInput, colNames, valOfCol,cb) {    
+    var queryString = `INSERT INTO burgers(burger_name, devoured) VALUES (?, ?);`;   
+      //var queryString = "INSERT INTO burgers(burger_name, devoured) VALUES(burger_name, devoured)";  
+    
+    console.log("inside orm insert" + queryString + " col: " + colNames + " val:" + valOfCol);
+   connection.query(queryString, valOfCol, function(err, result) {
+      if(err) {
+            console.log(" ORM insert error ", queryString);
         throw err;      }
+        cb(result);
       //console.log(result);
       console.log("inside orm insert  result= " + result);
     });
   },
   
   // will update with data specified
-  update: function(tableInput, colNames, whichToUpdate) {
-    var queryString = "UPDATE ?? SET ?? WHERE id= ??";    
-
+  update: function(tableInput, objcolVals, whichToUpdate,cb) {
+    //var queryString = "UPDATE ?? SET " + objToSql(objColVals) + " WHERE ??";    
+    var queryString = "UPDATE burgers SET devoured = true WHERE " + whichToUpdate;   
     console.log("inside orm update" + queryString);
-    connection.query(queryString, [tableInput, colNames, whichToUpdate], function(err, result) {
+    //connection.query(queryString, [tableInput, colNames, whichToUpdate], function(err, result) {
+      connection.query(queryString, function(err, result) {
       if (err) {
         throw err;      }
       //console.log(result)
-      
+      cb(result);      
       console.log("inside orm update  result= " + result);
     });
   },
