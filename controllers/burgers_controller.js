@@ -1,3 +1,9 @@
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//Controller
+// Basically it controls the flow of the data. It controls the data flow into model object and updates 
+// the view whenever data changes.
+// Create all our routes and set up logic within those routes where required.
+// ===============================================================================
 console.log("inside burgers_controller.js");
 var express = require("express");
 
@@ -7,7 +13,7 @@ var router = express.Router();
 var burger = require("../models/burgers.js");
 
 
-// Create all our routes and set up logic within those routes where required.
+
 router.get("/", function(req, res) {
   burger.select(function(data) {
     var hbsObject = {
@@ -29,11 +35,11 @@ router.post("/api/burgers", function(req, res) {
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-  burger.update(
-    { id:  req.body.id,
-      devoured: req.body.devoured
-    },
-    condition,
+  console.log('controller update cparams id', req.params.id)
+  req.params.devoured = false;
+  const { id } = req.params.id;
+  console.log('update params devoured', req.params.devoured);
+  burger.update(req.body.devoured, true, condition,
     function(result) {
       if (result.changedRows === 0) {
         // If no rows were changed, then the ID must not exist, so 404

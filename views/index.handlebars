@@ -1,6 +1,9 @@
-{{!-- ?? can't start mysql
-	?? how is the /post sent
-		lines 29-321 --}}
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// HTML using Handlebars by Mustache
+// This the display screen with the external javascript program.
+// ======================================================
+
+
 
 <div class="container bg" alt="Responsive image">
 		<div class="jumbotron">
@@ -36,13 +39,13 @@
 				{{#unless this.devoured}}
 				<li>
 					{{this.id}}
-					{{this.burger_name}}
+					{{this.burgerName}}
 
 					{{!-- <form action="/api/burgers{{this.id}}?_method=PUT" >  --}}
 					{{!-- <form action="/api/burgers/{{this.id}}"method=put" > --}}
 					<form>
 					<input type="hidden" name="devoured" value="false">
-					<button class="btn-primary" id= "devourIt" data-id={{this.id}}>Devour It!</button>
+					<button class="btn-primary devourIt" data-id={{this.id}}>Devour It!</button>
 					 </form> 
 				</li>
 				{{/unless}}
@@ -58,7 +61,7 @@
 			    {{#if this.devoured}}
 			      <li>
 			      	{{this.id}}
-			        {{this.burger_name}}
+			        {{this.burgerName}}
 
 			      </li>
 			    {{/if}}

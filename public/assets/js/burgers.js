@@ -1,12 +1,14 @@
 
-//alert("inside assets/js/burger.js  ");
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
-
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// Managing the DOM and sending the requuests to the router using AJAX.
+// ======================================================
 
 $(document).ready(function() {
-  // if devourIT is clicked, change set "devoured" to true and update.
-    $("#devourIt").on("click", function() {     
-     //  event.preventDefault();
+
+  // if devourIT is clicked, UPDATE "devoured" to true.
+    $(".devourIt").on("click", function() {         // need to change to class becuase of jquery; index, too
+     //  event.preventDefault();   prevents default aciton
+     console.log("burgers.js devoured ", $(this).data("id"))
       var id = $(this).data("id");
       var updateBurger = {
         id: $(this).data("id"),      
@@ -15,8 +17,7 @@ $(document).ready(function() {
   
       // Send the PuT request.
       console.log("/api/burgers:" + id);
-      $.ajax("/api/burgers/" + id, {  
-          
+      $.ajax("/api/burgers/" + id, {            
         type: "PUT",
         data: updateBurger
       }
