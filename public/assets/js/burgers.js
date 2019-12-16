@@ -1,15 +1,14 @@
 
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Managing the DOM and sending the requuests to the router using AJAX.
-// ======================================================
+
+// Make sure we wait to attach our handlers until the DOM is fully loaded.
+
 
 $(document).ready(function() {
-
-  // if devourIT is clicked, UPDATE "devoured" to true.
-    $(".devourIt").on("click", function() {         // need to change to class becuase of jquery; index, too
-     //  event.preventDefault();   prevents default aciton
-     console.log("burgers.js devoured ", $(this).data("id"))
+  // if devourIT is clicked, change set "devoured" to true and update.
+    $(".devourIt").on("click", function(event) {     
+      event.preventDefault();
       var id = $(this).data("id");
+
       var updateBurger = {
         id: $(this).data("id"),      
         devoured: true      
@@ -17,8 +16,9 @@ $(document).ready(function() {
   
       // Send the PuT request.
       console.log("/api/burgers:" + id);
-      $.ajax("/api/burgers/" + id, {            
-        type: "PUT",
+      $.ajax("/api/burgers/" + id, {  
+          
+        type: "put",
         data: updateBurger
       }
       ).then(
@@ -31,13 +31,13 @@ $(document).ready(function() {
     });
   
       // if create is clicked, create a new burger.
-    $("#submitBtn").on("click", function() {
+    $("#createForm").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
-      //event.preventDefault();
-      name = $("#create").val().trim()
+      event.preventDefault();
+      console.log("add listener")
   
       var newBurger = {
-        burger_name: name,      
+        burgerName: $("#create").val().trim(),      
         devoured: false
       };
   
@@ -53,14 +53,19 @@ $(document).ready(function() {
         }
       );
     });
-  
-    $(".delete-burger").on("click", function(event) {
+
+
+  // if delete button is clicked, delete the burger.
+    $(".deleteIt").on("click", function(event) {
+      event.preventDefault();
       var id = $(this).data("id");
   
       // Send the DELETE request.
       $.ajax("/api/burgers/" + id, {
-        type: "DELETE"
-      }).then(
+        type: "DELETE",
+        data: id
+      }
+      ).then(
         function() {
           console.log("deleted burger", id);
           // Reload the page to get the updated list
