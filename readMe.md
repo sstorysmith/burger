@@ -27,9 +27,8 @@ node Express is used to handle routing.
 
 The flow of this application:
 SERVER side    CLIENT side
-VVVVV           VVVVV
 
-  1. Start the SERVER listening on port 3000 in directory "burgers" with "$ node server.js.
+  1. Start the SERVER listening on port 3000 in directory "burgers" with "$ node server.js".
               2. Connect to the port on the CLIENT side with "http://localhost:3000".
               3. GET "/" is sent to the "burger_controller" on the server. 
   4. "burger_Controller" responds and sends to client the display "index.handlebars".
