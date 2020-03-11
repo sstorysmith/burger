@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 #Eat-the-Burger!
 Sharon Story Smith Fall 2019
+=======
+# Node, Express, Handlebars, MySQL, MVC and Heroku
+>>>>>>> c21243db572bfb4633bfb4ca26e93c82308de393
 
 Screen Shot:
     <img width=“1097” alt=“trainPrintScreen.jpg” src=“PrintScreen.jpg”>
