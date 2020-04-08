@@ -1,4 +1,4 @@
-#Eat-the-Burger!
+Eat-the-Burger!
 Sharon Story Smith     storysmithsharon@gmail.com
 Fall 2019
 Description of the App
@@ -26,9 +26,9 @@ Developer:
                                 );
     -Download App code GitHub.
         file: configuration.js, lines 9 - 19 are inserted to enable heroku.
-//       Delete these lines and remove the comment delimieters
-//       from lines 24-30.
-//      modify user, password, database for your specifics
+        Delete these lines and remove the comment delimieters
+        from lines 24-30.
+        modify user, password, database for your specifics
     -Run "$npm install" on the git bash command line.
     -Enter "$node server.js" on the git bash command line.
     -There's no need to open a localhost - this is automatic with React.
