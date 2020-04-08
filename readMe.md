@@ -5,7 +5,7 @@ Description of the App
 Uses: Node, Express, Handlebars, MySQL, MVC, "custom" ORM and Heroku
 
 Screen Shot:
-    ![screenshot of train](.\ScreenShot.png)
+    ![screenshot of burgers](.\PrintScreen.jpg)
      
 Working Demo:
     ![working demo of burgers](https://mighty-castle-12131.herokuapp.com/)
