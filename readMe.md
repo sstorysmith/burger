@@ -1,85 +1,59 @@
-<<<<<<< HEAD
 #Eat-the-Burger!
-Sharon Story Smith Fall 2019
-=======
-# Node, Express, Handlebars, MySQL, MVC and Heroku
->>>>>>> c21243db572bfb4633bfb4ca26e93c82308de393
+Sharon Story Smith     storysmithsharon@gmail.com
+Fall 2019
+Description of the App
+Uses: Node, Express, Handlebars, MySQL, MVC, "custom" ORM and Heroku
 
 Screen Shot:
-    <img width=“1097” alt=“trainPrintScreen.jpg” src=“PrintScreen.jpg”>
-    ![automated demo of train](.\PrintScreen.png)
-
+    ![screenshot of train](.\ScreenShot.png)
+     
 Working Demo:
-    When trying to connect remotely to the Heroku database on an open network such as a coffee shop, library, or even your University WiFi, it will be blocked. If you are experiencing a Heroku connection error, this could be why.
+    ![working demo of burgers](https://mighty-castle-12131.herokuapp.com/)
+    When trying to connect remotely to the Heroku database on an open network such as a coffee shop, library, or even your University WiFi, it will be blocked. If you are experiencing a Heroku connection error, this could be why.     
 
-    https://mighty-castle-12131.herokuapp.com/
+Local working demo: 
+
+Developer: 
+    -Install MySQL and create a database and table:
+            DROP DATABASE IF EXISTS burgersDB;
+            CREATE DATABASE burgersDB;
+            USE burgersDB;
+
+            CREATE TABLE burgers (
+            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            burgerName VARCHAR(255) NOT NULL,
+            devoured BOOLEAN  
+                                );
+    -Download App code GitHub.
+        file: configuration.js, lines 9 - 19 are inserted to enable heroku.
+//       Delete these lines and remove the comment delimieters
+//       from lines 24-30.
+//      modify user, password, database for your specifics
+    -Run "$npm install" on the git bash command line.
+    -Enter "$node server.js" on the git bash command line.
+    -There's no need to open a localhost - this is automatic with React.
 
 
-# Description of the App
-Uses: Node, Express, Handlebars, MySQL, MVC, homemade ORM and Heroku
 
-Eat-da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
+Overview:
+Burgers is a restaurant app that lets users create/devour burgers and keep a list of those created but not devoured and those devoured.
 
+    * Whenever a user submits a burger's name, the app will display the burger on the left side of the screen -- waiting to be devoured. Each burger in the waiting area also has a `Devour it!` button. When the user clicks the button, the burger will move to the right side of the screen and appear in the "devoured" list.
 
-* Whenever a user submits a burger's name, the app will display the burger on the left side of the screen -- waiting to be devoured. Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the screen.
+    * MySQL stores every burger in a database, whether 'devoured' or not.
 
-* MySQL stores every burger in a database, whether 'devoured' or not.
-
-## Directory structure
-All the recommended files and directories from the steps above are in the following file structure:
-
-burger
-|
-|_ server.js
-|
-├── config
-│   ├── connection.js
-│   └── orm.js
-│ 
-├── controllers
-│   └── burgers_controller.js
-│
-├── db
-│   ├── schema.sql
-│   └── seeds.sql
-│
-├── models
-│   └── burgers.js
-│ 
-├── node_modules
-│ 
-├── package.json
-│
-├── public
-│   └── assets
-│       ├── css
-│       │   └── style.css
-|       |    |_ reset.css
-│       └── img
-│           └── burger.png
-|           |_  fatman.png
-│   
-│
-├── server.js
-│
-└── views
-    ├── index.handlebars
-    └── layouts
-       └── main.handlebars
-
-### Node, Express, Handlebars, and MySQL, MVC and Heroku
 
 Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
 
 Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications. The Express.js framework makes it very easy to develop an application which can be used to handle multiple types of requests like the GET, PUT, and POST and DELETE requests. Node Express is used to handle routing.
 
- With Handlebars, you can separate the generation of HTML from the rest of your JavaScript and write cleaner code. The derived handlebar-javascript expressions then take one parameter, an object(your data) and it returns a string with the HTML and the object properties with values inserted into the HTML. Its syntax is obvious to the ye with its signature double curly braces.
+With Handlebars, you can separate the generation of HTML from the rest of your JavaScript and write cleaner code. The derived handlebar-javascript expressions then take one parameter, an object(your data) and it returns a string with the HTML and the object properties with values inserted into the HTML. Its syntax is obvious to the ye with its signature double curly braces.
 
- MySQL is Oracle's SQL database.
+MySQL is Oracle's SQL database.
 
- The MVC design is used. Model - stores an application data; View - renders Model for a client; and Controller - updates Model by reacting on client's actions.
+The MVC design is used. Model - stores an application data; View - renders Model for a client; and Controller - updates Model by reacting on client's actions.
 
- Heroku is a cloud platform as a service and is used to deploy the app on the web.
+Heroku is a cloud platform as a service and is used to deploy the app on the web.
 
  
 
@@ -89,8 +63,8 @@ Steps for academic Class:
   $node install path 
 
 
-The flow of this application:
-**SERVER side**    CLIENT side
+The Design Flow of this application:
+**SERVER side in blue**    CLIENT side
 
   **1.** Start the SERVER listening on port 3000 in directory "burgers" with "$ node server.js".
               2. Connect to the port on the CLIENT side with "http://localhost:3000".
@@ -116,8 +90,3 @@ The flow of this application:
               14. The "index.handlebars" reloads the display and the deleted burger
                   does not show in any lists. 
               
-
-
-
-
-
