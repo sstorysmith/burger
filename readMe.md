@@ -5,11 +5,11 @@ Fall 2019
 Uses: Node, Express, Handlebars, MySQL, MVC, "custom" ORM and Heroku
 
 Screen Shot:
-    [screenshot of Let's Go Out](PrintScreen.jpg)
+    [screenshot](PrintScreen.jpg)
 
      
 Working Demo:
-    ![working demo of ](https://erwinangeles.github.io/LetsGoOut//)
+    [working demo ](https://sstorysmith.github.io/burger/)
         
 Developer: 
     -Download App code from GitHub.
