@@ -8,8 +8,8 @@ Screen Shot:
     [screenshot](PrintScreen.jpg)
     
 Working Demo:
-     [demo](https://sstorysmith.github.io/burger/)
-     
+    [demo](https://sstorysmith.github.io/burger/)
+
 Developer: 
     -Download App code from GitHub.
     -Open index.html in a browser.
