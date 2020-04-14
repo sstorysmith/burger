@@ -6,11 +6,10 @@ Uses: Node, Express, Handlebars, MySQL, MVC, "custom" ORM and Heroku
 
 Screen Shot:
     [screenshot](PrintScreen.jpg)
-
-     
+    
 Working Demo:
-    [working demo ](https://sstorysmith.github.io/burger/)
-        
+     [demo](https://sstorysmith.github.io/burger/)
+     
 Developer: 
     -Download App code from GitHub.
     -Open index.html in a browser.
