@@ -8,14 +8,14 @@ $(document).ready(function() {
 
     var updateBurger = {
       id: $(this).data("id"),
-      devoured: true
+      devoured: true,
     };
 
     // Send the PUT request.
     console.log("/api/burgers:" + id);
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: updateBurger
+      data: updateBurger,
     }).then(function() {
       console.log("changed devoured to", updateBurger.devoured);
       // Reload the page to get the updated list
@@ -33,13 +33,13 @@ $(document).ready(function() {
       burgerName: $("#create")
         .val()
         .trim(),
-      devoured: false
+      devoured: false,
     };
 
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newBurger
+      data: newBurger,
     }).then(function() {
       console.log("created new burger");
       // Reload the page to get the updated list
@@ -56,7 +56,7 @@ $(document).ready(function() {
     // Send the DELETE request.
     $.ajax({
       url: "/api/burgers/" + id,
-      type: "DELETE"
+      type: "DELETE",
     }).then(function(response) {
       console.log("deleted burger", id);
       // Reload the page to get the updated list

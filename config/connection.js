@@ -1,10 +1,7 @@
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// This connects Node to MySQL.
-// the connection is exported for use with other modules
-// developer- lines 9 - 19 are inserted to enable heroku
-//       delete these lines and remove the comment delimieters
-//       from lines 24-30.
-//      modify user, password, database for your specifics
+// This connects Node to MySQL OR to heroku and jawsdb.
+
+
 console.log("inside connection.js");
 
 var mysql = require("mysql");
@@ -20,7 +17,7 @@ var connection = mysql.createConnection({
   port: 3306
 });
 }
-
+// commented out and replaced iwth code above
 // var connection = mysql.createConnection({
 //   host: "localhost",
 //   user: "root",

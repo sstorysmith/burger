@@ -1,37 +1,19 @@
 Eat-the-Burger!
 Sharon Story Smith     storysmithsharon@gmail.com
 Fall 2019
-Description of the App
+
 Uses: Node, Express, Handlebars, MySQL, MVC, "custom" ORM and Heroku
 
 Screen Shot:
-    ![screenshot of burgers](.\PrintScreen.jpg)
+    [screenshot of Let's Go Out](PrintScreen.jpg)
+
      
 Working Demo:
-    ![working demo of burgers](https://mighty-castle-12131.herokuapp.com/)
-    When trying to connect remotely to the Heroku database on an open network such as a coffee shop, library, or even your University WiFi, it will be blocked. If you are experiencing a Heroku connection error, this could be why.     
-
-Local working demo: 
-
+    ![working demo of ](https://erwinangeles.github.io/LetsGoOut//)
+        
 Developer: 
-    -Install MySQL and create a database and table:
-            DROP DATABASE IF EXISTS burgersDB;
-            CREATE DATABASE burgersDB;
-            USE burgersDB;
-
-            CREATE TABLE burgers (
-            id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            burgerName VARCHAR(255) NOT NULL,
-            devoured BOOLEAN  
-                                );
-    -Download App code GitHub.
-        file: configuration.js, lines 9 - 19 are inserted to enable heroku.
-        Delete these lines and remove the comment delimieters
-        from lines 24-30.
-        modify user, password, database for your specifics
-    -Run "$npm install" on the git bash command line.
-    -Enter "$node server.js" on the git bash command line.
-    -There's no need to open a localhost - this is automatic with React.
+    -Download App code from GitHub.
+    -Open index.html in a browser.
 
 
 

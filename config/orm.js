@@ -59,7 +59,7 @@ var orm = {
   },
   // will insert with data specified
   insert: function(tableInput, info, cb) {
-      // use the code functions above to substitute "?" for provided values pass in
+    // use the code functions above to substitute "?" for provided values pass in
     var queryString = `INSERT INTO burgers(burgerName, devoured) VALUES (?, ?);`;
 
     //console.log("inside orm insert" + queryString + " colname: " + colNames + " valcol:" + valOfCol);
@@ -76,8 +76,8 @@ var orm = {
 
   // will update with data specified
   update: function(tableInput, objcolVals, whichToUpdate, cb) {
-     //var queryString = "UPDATE ?? SET " + objToSql(objColVals) + " WHERE ??";
-     // explicity name the column headings and the variables to complete the sql statement
+    //var queryString = "UPDATE ?? SET " + objToSql(objColVals) + " WHERE ??";
+    // explicity name the column headings and the variables to complete the sql statement
     var queryString =
       "UPDATE burgers SET devoured = true WHERE " + whichToUpdate;
     console.log("inside orm update" + queryString);
@@ -93,7 +93,7 @@ var orm = {
   },
   // will update with data specified
   delete: function(whichToDelete, cb) {
-      // explicity name the column headings and the variables to complete the sql statement
+    // explicity name the column headings and the variables to complete the sql statement
     var queryString = "DELETE FROM burgers " + "WHERE " + whichToDelete;
 
     console.log("inside orm delete" + queryString);
@@ -104,6 +104,6 @@ var orm = {
       console.log("inside orm delete  result= " + result);
       cb(result);
     });
-  }
+  },
 };
 module.exports = orm;
