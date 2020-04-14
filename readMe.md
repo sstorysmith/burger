@@ -8,7 +8,7 @@ Screen Shot:
     [screenshot](PrintScreen.jpg)
     
 Working Demo:
-    [demo](https://sstorysmith.github.io/burger/)
+    [demo](https://mighty-castle-12131.herokuapp.com/)
 
 Developer: 
     -Download App code from GitHub.
