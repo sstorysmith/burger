@@ -17,11 +17,11 @@ Developer:
 
 
 Overview:  
-Burgers is a restaurant app that lets users create/devour burgers and keep a list of those created but not devoured and those devoured.  
+    Burgers is a restaurant app that lets users create/devour burgers and keep a list of those created but not devoured and those devoured.  
 
-    * Whenever a user submits a burger's name, the app will display the burger on the left side of the screen -- waiting to be devoured. Each burger in the waiting area also has a `Devour it!` button. When the user clicks the button, the burger will move to the right side of the screen and appear in the "devoured" list.  
+    Whenever a user submits a burger's name, the app will display the burger on the left side of the screen -- waiting to be devoured. Each burger in the waiting list also has a `Devour it!` button. When the user clicks the button, the burger will move to the right side of the screen and appear in the "devoured" list.  
 
-    * MySQL stores every burger in a database, whether 'devoured' or not.  
+    MySQL stores every burger in a database, whether 'devoured' or not.  
 
 
 Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
@@ -45,7 +45,7 @@ Steps for academic Class:
 
 
 The Design Flow of this application:  
-**SERVER side in blue**    CLIENT side  
+**SERVER list side in bold**    CLIENT side list in regular font
 
   **1.** Start the SERVER listening on port 3000 in directory "burgers" with "$ node server.js".  
               2. Connect to the port on the CLIENT side with "http://localhost:3000".  
