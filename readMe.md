@@ -47,17 +47,16 @@ Steps for academic Class:
 The Design Flow of this application:  
 **SERVER side in blue**    CLIENT side  
 
-  **1.** Start the SERVER listening on port 3000 in directory "burgers" with "$ node server.js".
-              2. Connect to the port on the CLIENT side with "http://localhost:3000".
-              3. GET "/" is sent to the "burger_controller" on the server. 
-  **4.** "burger_Controller" responds and sends to client the display "index.
-                 handlebars".
-              5. User enters data to add a burger, click on "Add a Burger" button. 
-              6. Client submits the POST "/api/burgers" to the SERVER.
+  **1.** Start the SERVER listening on port 3000 in directory "burgers" with "$ node server.js".  
+              2. Connect to the port on the CLIENT side with "http://localhost:3000".  
+              3. GET "/" is sent to the "burger_controller" on the server.   
+  **4.** "burger_Controller" responds and sends to client the display "index.handlebars".
+              5. User enters data to add a burger, click on "Add a Burger" button.   
+              6. Client submits the POST "/api/burgers" to the SERVER.  
   **7.** "burger_controller" uses "connection","orm", and "model" to INSERT the new
-                 burger into MySQL database with an SQL statement.
+                 burger into MySQL database with an SQL statement.  
               8. The "index.handlebars" reloads the display and the new burger
-                  displays in the Burgers List. 
+                  displays in the Burgers List.   
               9. User clicks on "Devour It!" button and PUT "/api/burgers/:id" is
                  sent to the "burger_controller" on the server. 
   **10.**"burger_controller" uses "connection","orm", and "model" to update the
