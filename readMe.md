@@ -45,7 +45,7 @@ Steps for academic Class:
 
 
 The Design Flow of this application:  
-**SERVER list side in bold**    CLIENT side list in regular font
+**SERVER side step is in bold**    CLIENT side steps are in regular font
 
   **1.** Start the SERVER listening on port 3000 in directory "burgers" with "$ node server.js".  
               2. Connect to the port on the CLIENT side with "http://localhost:3000".  
