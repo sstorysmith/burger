@@ -65,7 +65,7 @@ The Design Flow of this application:
                   displays in the Devoured List.    
               12. User clicks on "Delete" button and DELETE "/api/burgers/:id" is 
                   sent to the "burger_controller" on the server.    
-              13."burger_controller" uses "connection","orm", and "model" to delete 
+  **13.**"burger_controller" uses "connection","orm", and "model" to delete 
                   the burger from MySQL database with an SQL statement.   
               14. The "index.handlebars" reloads the display and the deleted burger
                   does not show in any lists.    
