@@ -45,7 +45,7 @@ Steps for academic Class:
 
 
 The Design Flow of this application:  
-**SERVER side step is in bold**    CLIENT side steps are in regular font
+**SERVER side step is in bold**         CLIENT side steps are in regular font
 
   **1.** Start the SERVER listening on port 3000 in directory "burgers" with "$ node server.js".  
               2. Connect to the port on the CLIENT side with "http://localhost:3000".  
@@ -60,13 +60,13 @@ The Design Flow of this application:
               9. User clicks on "Devour It!" button and PUT "/api/burgers/:id" is
                  sent to the "burger_controller" on the server. 
   **10.**"burger_controller" uses "connection","orm", and "model" to update the
-                burger to MySQL database with an SQL statement.
+                burger to MySQL database with an SQL statement.      
               11. The "index.handlebars" reloads the display and the updated burger
-                  displays in the Devoured List. 
+                  displays in the Devoured List.    
               12. User clicks on "Delete" button and DELETE "/api/burgers/:id" is 
-                  sent to the "burger_controller" on the server. 
+                  sent to the "burger_controller" on the server.    
               13."burger_controller" uses "connection","orm", and "model" to delete 
-                  the burger from MySQL database with an SQL statement.
+                  the burger from MySQL database with an SQL statement.   
               14. The "index.handlebars" reloads the display and the deleted burger
-                  does not show in any lists. 
+                  does not show in any lists.    
               
