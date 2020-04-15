@@ -6,8 +6,13 @@ Uses: Node, Express, Handlebars, MySQL, MVC, "custom" ORM and Heroku
 Screen Shot:
     [screenshot](PrintScreen.jpg)  
     
+<<<<<<< HEAD
 Working Demo:  
     [demo](https://sstorysmith.github.io/burger/)  
+=======
+Working Demo:
+    [demo](https://mighty-castle-12131.herokuapp.com/)
+>>>>>>> 5628f6e6be4a87282c691ce90c2916da33a9d6e1
 
 Developer:   
     -Download App code from GitHub.  
